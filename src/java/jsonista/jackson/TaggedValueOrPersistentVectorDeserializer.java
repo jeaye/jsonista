@@ -38,7 +38,10 @@ public class TaggedValueOrPersistentVectorDeserializer extends StdDeserializer<O
         p.nextValue();
         return keyword;
       }
+    } else {
+      return (List<Object>) t.persistent();
     }
+
     while (p.nextValue() != JsonToken.END_ARRAY) {
       t = t.conj(deser.deserialize(p, ctxt));
     }

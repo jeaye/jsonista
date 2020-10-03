@@ -23,4 +23,8 @@
       (testing "with installed module"
         (is (= {"system/status" :status/good
                 "system/statuses" [:status/good :status/bad]}
-               (j/read-value (j/write-value-as-string data mapper) mapper)))))))
+               (j/read-value (j/write-value-as-string data mapper) mapper)))))
+
+    (testing "empty list"
+      (let [data {:foo []}]
+        (is (= {"foo" []} (j/read-value (j/write-value-as-string {:foo []} mapper) mapper)))))))
