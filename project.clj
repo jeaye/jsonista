@@ -7,11 +7,14 @@
   :javac-options ["-Xlint:unchecked" "-target" "1.7" "-source" "1.7"]
   :java-source-paths ["src/java"]
   :plugins [[lein-codox "0.10.7"]
-            [lein-jmh "0.3.0"]]
+            [lein-jmh "0.3.0"]
+            [com.jakemccrary/lein-test-refresh "0.24.1"]]
   :deploy-repositories [["releases" :clojars]]
   :codox {:source-uri "http://github.com/metosin/jsonista/blob/master/{filepath}#L{line}"
           :output-path "doc"
           :metadata {:doc/format :markdown}}
+  :test-refresh {:quiet true
+                 :focus-flag :refresh}
   :dependencies [[com.fasterxml.jackson.core/jackson-core "2.11.2"]
                  [com.fasterxml.jackson.core/jackson-databind "2.11.2"]
                  [com.fasterxml.jackson.datatype/jackson-datatype-jsr310 "2.11.2"]]
