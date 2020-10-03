@@ -1,4 +1,4 @@
-(defproject com.jeaye/jsonista "2020.10.01-1"
+(defproject com.jeaye/jsonista "2020.10.02-1"
   :description "Clojure library for fast JSON encoding and decoding."
   :url "https://github.com/metosin/jsonista"
   :license {:name "Eclipse Public License"
